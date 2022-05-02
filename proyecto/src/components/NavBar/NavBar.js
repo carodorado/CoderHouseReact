@@ -1,8 +1,8 @@
 import "./NavBar.css";
-import buscar from './images/icono-buscar.svg';
-import perfil from './images/icono-perfil.svg';
-import carrito from './images/icono-carrito.svg';
-import logo from './images/logo.svg';
+import CartWidget from '../CartWidget/CartWidget.js'
+import buscar from '../images/icono-buscar.svg';
+import perfil from '../images/icono-perfil.svg';
+import logo from '../images/logo.svg';
 
 function NavBar() {
     return (
@@ -16,9 +16,9 @@ function NavBar() {
                 </ul>
             </nav>
             <div>
-                <a href=""><img src={ buscar }/></a>
-                <a href=""><img src={ perfil }/></a>
-                <a href=""><img src={ carrito }/></a>
+                <a href=""><img src={ buscar } alt="icono buscar"/></a>
+                <a href=""><img src={ perfil } alt="icono perfil"/></a>
+                <CartWidget/>
             </div>
         </header>
     );
