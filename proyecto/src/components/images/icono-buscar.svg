@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.78" height="38.78" viewBox="0 0 1400 1400">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #ff614d;
+      }
+
+      .cls-1 {
+        stroke-width: 124.76px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        stroke-width: 124px;
+      }
+
+      .cls-3 {
+        stroke-width: 97.47px;
+      }
+    </style>
+  </defs>
+  <circle id="Elipse_1" data-name="Elipse 1" class="cls-1" cx="577.56" cy="592.56" r="488.56"/>
+  <path id="Línea_1" data-name="Línea 1" class="cls-2" d="M956,970l358,358Z"/>
+  <path id="Forma_1" data-name="Forma 1" class="cls-3" d="M185,424"/>
+  <path id="Forma_2" data-name="Forma 2" class="cls-2" d="M356,404a284.429,284.429,0,0,0-76,252"/>
+</svg>

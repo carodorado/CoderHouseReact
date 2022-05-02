@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.88" height="39.045" viewBox="0 0 800 950">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #ff614d;
+        stroke-width: 80px;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="Elipse_1" data-name="Elipse 1" class="cls-1" cx="400" cy="237" r="184"/>
+  <path id="Rectángulo_redondeado_1" data-name="Rectángulo redondeado 1" class="cls-2" d="M229,531H561A172,172,0,0,1,733,703v1A172,172,0,0,1,561,876H229A172,172,0,0,1,57,704v-1A172,172,0,0,1,229,531Z"/>
+</svg>
