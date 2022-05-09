@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;  
+}
+
+.card{
+    max-width: 250px;
+    border-radius: 30px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 20px 40px;
+}
+
+div.card img{
+    max-width: 200px;
+} 
+
+div.card h4{
+    padding: 5px;
+}
+
+div.card p{
+    padding: 5px;
+}
+

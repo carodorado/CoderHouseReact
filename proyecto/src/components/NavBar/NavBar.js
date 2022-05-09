@@ -1,8 +1,8 @@
 import "./NavBar.css";
 import CartWidget from '../CartWidget/CartWidget.js'
-import buscar from '../images/icono-buscar.svg';
-import perfil from '../images/icono-perfil.svg';
-import logo from '../images/logo.svg';
+import buscar from '../../images/icono-buscar.svg';
+import perfil from '../../images/icono-perfil.svg';
+import logo from '../../images/logo.svg';
 
 function NavBar() {
     return (

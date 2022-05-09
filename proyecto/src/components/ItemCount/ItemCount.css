@@ -1,0 +1,43 @@
+button{
+    padding: 5px;
+    background-color: #ff614d;
+    border-style: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 10px 20px -10px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform .15s;
+    color:white;
+    padding:10px;
+
+    
+}
+
+
+button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px;
+    transform: translateY(-1px);
+  }
+
+  button:active {
+    transform: translateY(1px);
+    transform: scale(0.9);
+  }
+
+span {
+    text-align: center;
+    padding: 20px;
+}
+
+button.circular{
+    height:35px;
+    width:35px;
+    font-size:15px;
+    font-weight: bold;
+    
+
+
+}
+
+p {
+    margin: 5px;
+}

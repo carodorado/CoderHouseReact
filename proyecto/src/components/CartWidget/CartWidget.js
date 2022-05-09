@@ -1,4 +1,4 @@
-import carrito from '../images/icono-carrito.svg';
+import carrito from '../../images/icono-carrito.svg';
 
 function CartWidget(){
     return(
