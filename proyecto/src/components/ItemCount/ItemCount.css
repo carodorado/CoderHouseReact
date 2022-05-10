@@ -8,6 +8,7 @@ button{
     transition: transform .15s;
     color:white;
     padding:10px;
+    font-size:12px;
 
     
 }
