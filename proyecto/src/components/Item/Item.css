@@ -11,6 +11,14 @@
     padding: 20px 40px;
 }
 
+div.card a{
+    text-decoration: none;
+}
+
+div.card a:visited{
+    color: black;
+} 
+
 div.card img{
     max-width: 100px;
 } 

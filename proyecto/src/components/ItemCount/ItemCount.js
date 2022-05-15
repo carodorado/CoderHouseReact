@@ -25,7 +25,7 @@ function ItemCount({ stock=0, initial=1 }){
     }
 
     return (
-        <div>
+        <div className = 'counter'>
             <button className='circular' onClick={substract}>-</button>
             <span>{amount}</span>
             <button className='circular' onClick={add}>+</button>
