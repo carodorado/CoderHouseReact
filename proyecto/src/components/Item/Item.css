@@ -5,6 +5,7 @@
 
 .card{
     margin: 0px 20px;
+    margin-bottom: 50px;
     max-width: 150px;
     border-radius: 30px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -16,6 +17,10 @@ div.card a{
 }
 
 div.card a:visited{
+    color: black;
+} 
+
+div.card a{
     color: black;
 } 
 

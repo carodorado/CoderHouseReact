@@ -19,6 +19,10 @@ header div a{
     padding: 20px;
 }
 
+header a.logo{
+    width:200px;
+}
+
 header img{
     max-height: 100px;
 }

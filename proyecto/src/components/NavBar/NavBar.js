@@ -3,16 +3,18 @@ import CartWidget from '../CartWidget/CartWidget.js'
 import buscar from '../../images/icono-buscar.svg';
 import perfil from '../../images/icono-perfil.svg';
 import logo from '../../images/logo.svg';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
+
     return (
         <header className="Nav-bar">
-            <img src={ logo } alt="Logo Petshop"/>
+            <Link to="/" className="logo"><img src={ logo } alt="Logo Petshop"/></Link>
             <nav>
                 <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Categorias</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><Link to="/categoria/articulos">Articulos</Link></li>
+                    <li><Link to="/categoria/accesorios">Accesorios</Link></li>
+                    <li><Link to="/categoria/juguetes">Juguetes</Link></li>
                 </ul>
             </nav>
             <div>
