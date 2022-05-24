@@ -1,0 +1,42 @@
+.load{
+    font-family: 'Be Vietnam Pro', sans-serif;    
+    font-size: 2rem;
+    color: #ff614d;
+    display:flex;
+    justify-content:center;
+    width: 400px;
+   
+  }
+
+  .loader {
+    margin:10px;
+    opacity: 1;
+    animation: fade 2s infinite;
+    position:relative;
+    width: 30px;
+    height: 30px;
+}
+
+.first{  
+  top: 10px;
+}
+
+.second{
+  top: -10px;
+  animation-delay: 0.2s;
+}
+
+.third{
+  top: 10px;
+  animation-delay: 0.4s;
+}
+
+@keyframes fade {
+  0% { opacity: 0 }
+  19% { opacity: 0 }
+  20% { opacity: 1 }
+  50% { opacity: 1 }
+  90% { opacity: 1 }
+  100% { opacity: 0 }
+}
+

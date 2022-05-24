@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
 
-function ItemCount({ stock=0, initial=1 }){
+function ItemCount({ stock=0, initial=1, state, onAdd }){
     const[amount, setAmount] = useState(initial);
-    
     function add(){
         if(amount < stock) {
             setAmount(amount + 1);
@@ -22,6 +21,7 @@ function ItemCount({ stock=0, initial=1 }){
 
     function addToCart(){
         alert(`Has agregado ${amount} productos al carrito`);
+        onAdd();
     }
 
     return (

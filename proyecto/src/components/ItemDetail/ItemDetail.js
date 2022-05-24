@@ -1,7 +1,15 @@
+import { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount.js'
+import ItemDone from '../ItemDone/ItemDone.js'
 import './ItemDetail.css'
 
 function ItemDetail({ loading=false, item}){
+
+    const [state, setState] = useState('add');
+
+    function onAdd(){
+        setState('done');
+    }
 
     function numberPesos(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -9,14 +17,6 @@ function ItemDetail({ loading=false, item}){
 
     return(
         <div className="CardContainer">
-            {loading ? 
-            <div className="load">
-                <h3>Cargando</h3>
-                <img className="loader first" src={require('../../images/huella.png')}/>
-                <img className="loader second" src={require('../../images/huella.png')}/>
-                <img className="loader third" src={require('../../images/huella.png')}/>
-            </div> 
-            : 
             <div className='cardDetail'>
                 <img src={require(`../../images/${item.image}`)} alt='Comedero Azul'/>
                 <div>
@@ -30,9 +30,14 @@ function ItemDetail({ loading=false, item}){
                         <p><span>Calificación: </span>{ item.rating }</p>                        
                     </div>
                     <p className='price'>$ { numberPesos(item.price) }</p>
-                    <ItemCount stock={ item.stock } initial={1}/>                      
+                    {
+                        state === 'add' ?
+                        <ItemCount stock={ item.stock } initial={1} onAdd={onAdd} state={state}/>
+                        :
+                        <ItemDone/>
+                    }                                         
                 </div>          
-            </div>} 
+            </div>
         </div>
     )
 }

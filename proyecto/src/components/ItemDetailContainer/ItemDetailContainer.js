@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail.js'
+import Loader from '../Loader/Loader.js'
 import { products } from '../../data/products';
+
+import './ItemDetailContainer.css'
 
 function ItemDetailContainer(){
     const [item, setItem] = useState([]);
@@ -22,8 +25,11 @@ function ItemDetailContainer(){
     }, [])
 
     return(
-        <div>
-            <ItemDetail loading={loading} item={item}/>
+        <div className="item-detail-container">
+            {loading ? 
+            <Loader/>
+            : 
+            <ItemDetail loading={loading} item={item}/>}
         </div>
     )
 }
