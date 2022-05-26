@@ -1,36 +1,33 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
 
-function ItemCount({ stock=0, initial=1, state, onAdd }){
-    const[amount, setAmount] = useState(initial);
+function ItemCount({ item, stock=0, initial=1, state, onAdd }){
+    const[quantity, setQuantity] = useState(initial);
     function add(){
-        if(amount < stock) {
-            setAmount(amount + 1);
+        if(quantity < stock) {
+            setQuantity(quantity + 1);
         } else {
           alert('No hay mas stock');
         }
+        
     }
 
     function substract(){
-        if(amount > 1) {
-            setAmount(amount - 1);
+        if(quantity > 1) {
+            setQuantity(quantity - 1);
         } else {
             alert('La cantidad no puede ser menor a 1 item'); 
         }
     }
-
-    function addToCart(){
-        alert(`Has agregado ${amount} productos al carrito`);
-        onAdd();
-    }
+    
 
     return (
         <div className = 'counter'>
             <button className='circular' onClick={substract}>-</button>
-            <span>{amount}</span>
+            <span>{quantity}</span>
             <button className='circular' onClick={add}>+</button>
             <p>In Stock: {stock}</p>
-            <button onClick={addToCart}>Agregar</button>
+            <button onClick={() => {onAdd(item,quantity)} }>Agregar</button>
         </div>
     )
 }

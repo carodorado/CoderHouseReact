@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;      
+}
+
+h2 {
+    color: #ff614d;
+    margin: 10px;
+}
+
+.item-cart{
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+    width: 600px;
+    border-radius: 30px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 20px 40px;
+}
+
+ul.cart{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.left{
+    display:flex;
+}
+
+div.left > div{
+    text-align: left;
+    padding-left: 10px;
+}
+
+div.right{
+    display:flex;
+}
+
+div.right > div > p{
+    padding: 20px;
+}
+
+div.item-cart img{
+    max-width: 100px;
+} 
+
+div.item-cart h4{
+    font-size: 15px;
+    padding: 5px;
+}
+
+div.item-cart p{
+    font-size: 12px;
+    padding: 5px;
+}
+

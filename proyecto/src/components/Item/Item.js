@@ -1,8 +1,21 @@
 import ItemCount from '../ItemCount/ItemCount.js'
+import { CartContext } from '../../context/CartContext.js';
+import { useContext } from 'react';
 import './Item.css'
 import { Link } from 'react-router-dom';
 
 function Item({ details }) {
+
+    const {addToCart, cartList, productList, setProductList} = useContext(CartContext);
+
+    function onAdd(item, quantity){
+        addToCart(item, quantity);
+        alert(`Has agregado ${quantity} productos al carrito`);
+        let index = productList.findIndex(element => element.id === item.id);
+        const newProducts = productList;
+        newProducts[index].stock -= quantity;
+        setProductList(newProducts);
+    }
 
     function numberPesos(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -17,7 +30,7 @@ function Item({ details }) {
                     <p>$ { numberPesos(details.price) }</p>
                 </div>
             </Link>
-            <ItemCount stock={ details.stock } initial={1}/>            
+            <ItemCount item={details} stock={ details.stock } initial={1} onAdd={onAdd} />         
         </div>        
     )
 }

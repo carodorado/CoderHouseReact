@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../context/CartContext.js';
 import ItemCount from '../ItemCount/ItemCount.js'
 import ItemDone from '../ItemDone/ItemDone.js'
 import './ItemDetail.css'
@@ -6,9 +7,15 @@ import './ItemDetail.css'
 function ItemDetail({ loading=false, item}){
 
     const [state, setState] = useState('add');
+    const {addToCart, cartList, productList, setProductList} = useContext(CartContext);
 
-    function onAdd(){
+    function onAdd(item, quantity){
         setState('done');
+        addToCart(item, quantity);
+        let index = productList.findIndex(element => element.id === item.id);
+        const newProducts = productList;
+        newProducts[index].stock -= quantity;
+        setProductList(newProducts);
     }
 
     function numberPesos(x) {
@@ -32,7 +39,7 @@ function ItemDetail({ loading=false, item}){
                     <p className='price'>$ { numberPesos(item.price) }</p>
                     {
                         state === 'add' ?
-                        <ItemCount stock={ item.stock } initial={1} onAdd={onAdd} state={state}/>
+                        <ItemCount item={item} stock={ item.stock } initial={1} onAdd={onAdd} state={state}/>
                         :
                         <ItemDone/>
                     }                                         
