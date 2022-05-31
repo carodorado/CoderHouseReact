@@ -6,15 +6,11 @@ import { Link } from 'react-router-dom';
 
 function Item({ details }) {
 
-    const {addToCart, cartList, productList, setProductList} = useContext(CartContext);
+    const {addToCart} = useContext(CartContext);
 
-    function onAdd(item, quantity){
-        addToCart(item, quantity);
+    function onAdd(quantity){
+        addToCart(details, quantity);
         alert(`Has agregado ${quantity} productos al carrito`);
-        let index = productList.findIndex(element => element.id === item.id);
-        const newProducts = productList;
-        newProducts[index].stock -= quantity;
-        setProductList(newProducts);
     }
 
     function numberPesos(x) {

@@ -1,6 +1,8 @@
 import { CartContext } from "../../context/CartContext";
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './Cart.css';
+import papelera from '../../images/icono-papelera.svg';
 
 function Cart(){
 
@@ -8,10 +10,16 @@ function Cart(){
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
-    const { cartList } = useContext(CartContext);
+    const { cartList,  deleteItem, sumTotal, deleteAll} = useContext(CartContext);
+
     return (
-        <ul className="cart">
-            <h2>Carrito</h2>
+        <>
+        {cartList.length > 0 ? 
+        <ul className="cart">            
+            <div className="cart-title">
+                <h2>Carrito</h2>
+                <h3 onClick={() => {deleteAll()} }>Eliminar todo</h3>
+            </div>
             {cartList.map(element => {
                 return (
                     <div className="item-cart" key={ element.item.id }>
@@ -31,14 +39,28 @@ function Cart(){
                             <div>
                                 <h4>Total</h4>
                                 <p>$ { numberPesos( element.quantity * element.item.price ) }</p>   
-                            </div>
-                         
+                            </div>       
+                            <div>
+                                <button className="delete" onClick={() => {deleteItem(element.item)} }>
+                                    <img className="delete" src={ papelera } alt="icono papelera"/>
+                                </button>                                
+                            </div>                                                
                         </div>
                     </div>
                 )
             })}
+            <div className="item-cart">
+                <h4>Total</h4>
+                <p className="total">$ { numberPesos(sumTotal()) }</p>
+            </div>
         </ul>
-        
+        : 
+        <div>
+            <h5>No hay productos en el carrito</h5>
+            <Link to="/"><button>Ir a Inicio</button> </Link>
+        </div>
+        }
+        </>
     )
 }
 export default Cart; 

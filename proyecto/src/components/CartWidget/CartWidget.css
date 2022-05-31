@@ -1,0 +1,24 @@
+
+span.counter{
+    text-decoration: none;
+    font-size:25px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    padding:0px;
+    margin-bottom: 20px;
+    color:#ff614d;
+}
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+
+a.cart-widget{
+    width: 60px;
+    display:flex;
+    justify-content: space-between;
+}

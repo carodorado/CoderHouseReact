@@ -7,15 +7,11 @@ import './ItemDetail.css'
 function ItemDetail({ loading=false, item}){
 
     const [state, setState] = useState('add');
-    const {addToCart, cartList, productList, setProductList} = useContext(CartContext);
+    const {addToCart} = useContext(CartContext);
 
-    function onAdd(item, quantity){
+    function onAdd(quantity){
         setState('done');
         addToCart(item, quantity);
-        let index = productList.findIndex(element => element.id === item.id);
-        const newProducts = productList;
-        newProducts[index].stock -= quantity;
-        setProductList(newProducts);
     }
 
     function numberPesos(x) {
@@ -39,7 +35,7 @@ function ItemDetail({ loading=false, item}){
                     <p className='price'>$ { numberPesos(item.price) }</p>
                     {
                         state === 'add' ?
-                        <ItemCount item={item} stock={ item.stock } initial={1} onAdd={onAdd} state={state}/>
+                        <ItemCount item={item} initial={1} onAdd={onAdd} state={state}/>
                         :
                         <ItemDone/>
                     }                                         

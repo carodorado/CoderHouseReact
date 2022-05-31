@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
 
-function ItemCount({ item, stock=0, initial=1, state, onAdd }){
+function ItemCount({ item, initial=1, state, onAdd }){
+    
     const[quantity, setQuantity] = useState(initial);
+
     function add(){
-        if(quantity < stock) {
+        if(quantity < item.stock) {
             setQuantity(quantity + 1);
         } else {
           alert('No hay mas stock');
@@ -26,8 +28,8 @@ function ItemCount({ item, stock=0, initial=1, state, onAdd }){
             <button className='circular' onClick={substract}>-</button>
             <span>{quantity}</span>
             <button className='circular' onClick={add}>+</button>
-            <p>In Stock: {stock}</p>
-            <button onClick={() => {onAdd(item,quantity)} }>Agregar</button>
+            <p>In Stock: {item.stock}</p>
+            <button onClick={() => {onAdd(quantity)} }>Agregar</button>
         </div>
     )
 }

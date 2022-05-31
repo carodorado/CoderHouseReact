@@ -3,7 +3,7 @@
     font-family: 'Be Vietnam Pro', sans-serif;      
 }
 
-h2 {
+h2, h3 {
     color: #ff614d;
     margin: 10px;
 }
@@ -56,3 +56,39 @@ div.item-cart p{
     padding: 5px;
 }
 
+button.delete {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+button > img.delete {
+    max-width: 30px;
+    padding-top: 30px;
+}
+
+
+.cart-title {
+    display:flex;
+    width: 70%;
+    margin:20px;
+    justify-content: space-between;
+}
+
+div > p.total {
+    padding-top: 10px;
+}
+
+h3:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+div.item-cart > h4 {
+    font-size: 20px;
+    padding-top: 8px;
+}
+
+h5 {
+    font-size: 20px;
+    margin:20px;
+}
