@@ -14,7 +14,6 @@ const CartContextProvider = ({children}) => {
     }
 
 function addToCart(item, quantity){
-    
     let i = productList.findIndex(element => element.id === item.id);
     const newProducts = productList;
     newProducts[i].stock -= quantity;

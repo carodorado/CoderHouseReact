@@ -2,32 +2,28 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "./ItemListContainer.css";
 import ItemList from '../ItemList/ItemList.js'
-import { products } from '../../data/products';
+import { getFirestore, doc, collection, getDoc, getDocs, query, where } from 'firebase/firestore'
 
 function ItemListContainer({setShowDetail}){
     const { categoryId } = useParams();
     const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);  
-
-    const getFetch = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products);
-         }, 200);
-    })
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
-        if(categoryId){
-            getFetch
-            .then(answer => setItems(answer.filter(product => product.category === categoryId)))
+        const db = getFirestore()
+        const queryCollection = collection(db, 'products')
+        if(categoryId) {            
+            const queryCollectionFilter = query(queryCollection, where('category','==', categoryId))
+            getDocs(queryCollectionFilter)
+            .then(answer => setItems( answer.docs.map(item => ({id: item.id, ...item.data()}) )))
             .catch(err => console.log(err))
             .finally(()=> setLoading(false));
         } else {
-            getFetch
-            .then(answer => setItems(answer))
+            getDocs(queryCollection)
+            .then(answer => setItems( answer.docs.map(item => ({id: item.id, ...item.data()}) )))
             .catch(err => console.log(err))
-            .finally(()=> setLoading(false));
+            .finally(()=> setLoading(false));        
         }
-
     }, [categoryId])
 
     return(
