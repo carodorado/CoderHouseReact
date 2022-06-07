@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart.js';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import CartContextProvider from './context/CartContext';
+import ShopForm from './components/ShopForm/ShopForm';
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
             <Route path ="/categoria/:categoryId" element={ <ItemListContainer/> }/>
             <Route path ="/detalle/:id" element={ <ItemDetailContainer/> }/>
             <Route path ="/cart" element={ <Cart/> }/>
-            <Route path ="/*" element={ <Navigate to="/" replace/> }/>
+            <Route path ="/form" element={ <ShopForm/> }/>
+            <Route path ="/*" element={ <Navigate to="/" replace/> }/>            
         </Routes>
         </div>   
     </CartContextProvider>

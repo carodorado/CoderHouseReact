@@ -12,9 +12,8 @@ function CartWidget(){
     return(
         <Link className="cart-widget" to="/cart">
             <img src={ carrito } alt="icono carrito"/>
-            {totalQuantity > 0 ?
-                <span className="counter">{ totalQuantity }</span>
-                : null}
+            {totalQuantity > 0 &&
+                <span className="counter">{ totalQuantity }</span>}
         </Link>
     )
 }
