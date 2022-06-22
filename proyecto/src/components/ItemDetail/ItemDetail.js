@@ -1,21 +1,19 @@
 import { useContext, useState } from 'react';
+
 import { CartContext } from '../../context/CartContext.js';
 import ItemCount from '../ItemCount/ItemCount.js'
 import ItemDone from '../ItemDone/ItemDone.js'
+
 import './ItemDetail.css'
 
-function ItemDetail({ loading=false, item}){
+function ItemDetail({item}){
 
     const [state, setState] = useState('add');
-    const {addToCart} = useContext(CartContext);
+    const {addToCart, numberPesos} = useContext(CartContext);
 
     function onAdd(quantity){
         setState('done');
         addToCart(item, quantity);
-    }
-
-    function numberPesos(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
     return(

@@ -1,21 +1,19 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
 import ItemCount from '../ItemCount/ItemCount.js'
 import { CartContext } from '../../context/CartContext.js';
-import { useContext } from 'react';
+
 import './Item.css'
-import { Link } from 'react-router-dom';
 
 function Item({ details }) {
 
-    const {addToCart} = useContext(CartContext);
+    const {addToCart, numberPesos} = useContext(CartContext);
 
     function onAdd(quantity){
         addToCart(details, quantity);
-        alert(`Has agregado ${quantity} productos al carrito`);
     }
 
-    function numberPesos(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
     return (
         <div className='card'>
             <Link to={`/detalle/${details.id}`}>

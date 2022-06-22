@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getFirestore, doc, getDoc} from 'firebase/firestore'
+
 import ItemDetail from '../ItemDetail/ItemDetail.js'
 import Loader from '../Loader/Loader.js'
 
 import './ItemDetailContainer.css'
+import { CartContext } from '../../context/CartContext.js';
 
 function ItemDetailContainer(){
-    const [item, setItem] = useState([]);
+
+    const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
+    const {productList} = useContext(CartContext)
   
     useEffect(() => {
-        const db = getFirestore()
-        const dbQuery = doc(db, 'products', id)
-        getDoc(dbQuery)
-        .then(answer => setItem({id: answer.id, ...answer.data()}))
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
+        const product = productList.filter(product => product.id == id)
+        setItem(product[0])
+        setLoading(false)
     }, [id])
 
     return(
@@ -25,7 +25,7 @@ function ItemDetailContainer(){
             {loading ? 
             <Loader/>
             : 
-            <ItemDetail loading={loading} item={item}/>}
+            <ItemDetail item={item}/>}
         </div>
     )
 }

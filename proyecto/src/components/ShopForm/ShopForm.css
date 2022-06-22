@@ -23,8 +23,8 @@ body {
   }
   
   .title {
-    font-size: 50px;
-    margin-bottom: 50px;
+    font-size: 40px;
+    margin-bottom: 20px;
   }
 
   .inputContainer {
@@ -34,15 +34,13 @@ body {
     margin-bottom: 17px;
   }
 
-  /* Style the inputs */
-
 .input {
     position: absolute;
     top: 0px;
     left: 0px;
     height: 100%;
     width: 100%;
-    border: 1px solid #DADCE0;
+    border: 2px solid #dfdfdf;
     border-radius: 20px;
     font-size: 16px;
     padding: 0 20px;
@@ -50,14 +48,10 @@ body {
     background: none;
     z-index: 1;
   }
-  
-  /* Hide the placeholder texts (a) */
-  
+    
   ::placeholder {
     color: transparent;
   }
-  
-  /* Styling text labels */
 
 .label {
     position: absolute;
@@ -65,7 +59,7 @@ body {
     left: 15px;
     padding: 0 4px;
     background-color: white;
-    color: #DADCE0;
+    color: #aaaaaa;
     font-size: 16px;
     transition: 0.5s;
     z-index: 0;
@@ -82,11 +76,13 @@ body {
     cursor: pointer;
     font-size: 16px;
     margin-top: 30px;
+    margin-bottom: 20px;
   }
   
   .submitBtn:hover {
     background-color: #ff614d;
     transform: translateY(-2px);
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px;
   }
   
   .input:focus + .label {

@@ -1,7 +1,7 @@
 import Item from '../Item/Item.js'
 import Loader from '../Loader/Loader.js'
-import './ItemList.css'
 
+import './ItemList.css'
 
 function ItemList({ loading=false, items}){
 

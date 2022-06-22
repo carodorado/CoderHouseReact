@@ -18,13 +18,13 @@ function ItemCart({element, numberPesos, deleteItem}){
                 </div>
                 <div>
                     <h4>Total</h4>
-                    <p>$ { numberPesos( element.quantity * element.item.price ) }</p>   
-                </div>       
+                    <p>$ { numberPesos( element.quantity * element.item.price ) }</p>
+                </div>
                 <div>
                     <button className="delete" onClick={() => {deleteItem(element.item)} }>
                         <img className="delete" src={ papelera } alt="icono papelera"/>
-                    </button>                                
-                </div>                                                
+                    </button>                          
+                </div>                                        
             </div>
         </div>
     )

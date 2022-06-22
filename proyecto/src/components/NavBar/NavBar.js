@@ -1,9 +1,11 @@
-import "./NavBar.css";
+import { Link } from 'react-router-dom';
+
 import CartWidget from '../CartWidget/CartWidget.js'
 import buscar from '../../images/icono-buscar.svg';
 import perfil from '../../images/icono-perfil.svg';
 import logo from '../../images/logo.svg';
-import { Link } from 'react-router-dom';
+
+import "./NavBar.css";
 
 function NavBar() {
 

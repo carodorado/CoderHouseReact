@@ -38,3 +38,12 @@ div.card p{
     padding: 5px;
 }
 
+.swal2-styled.swal2-confirm {
+    background-color: #ff614d !important;
+    box-shadow: none;
+}
+
+.swal2-styled.swal2-confirm:hover{
+    background-color: #ff614d;
+    box-shadow: -3px 14px 18px -6px rgba(255,97,77,0.8);
+}
